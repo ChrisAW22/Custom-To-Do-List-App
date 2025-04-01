@@ -88,6 +88,16 @@
                     }
                 });
                 li.appendChild(editButton);
-            })
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => {
+                    tasks.splice(index, 1);
+                    saveTasks();
+                    renderTasks();
+                });
+                li.appendChild(deleteButton);
+                todoList.appendChild(li);
+            });
         }
 
