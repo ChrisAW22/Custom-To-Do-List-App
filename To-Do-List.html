@@ -100,4 +100,15 @@
                 todoList.appendChild(li);
             });
         }
+        document.getElementById('addTaskButton').addEventListener('click', () => {
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value.trim();
+            if(taskText !== '') {
+                tasks.push({ text: taskText, completed: false });
+                saveTasks();
+                renderTasks();
+                taskInput.value = '';
+            }
+        });
+        
 
